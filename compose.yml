@@ -7,7 +7,7 @@ services:
     stop_grace_period: 120s
     ports:
       - "8168:8168"
-    user: "0:0"
+    user: "1000:1000"
     volumes:
       - ./firo-data:/data
     command:
