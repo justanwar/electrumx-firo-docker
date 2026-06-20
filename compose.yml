@@ -30,7 +30,7 @@ services:
           memory: 3g
 
   electrumx:
-    image: nexusocean/electrumx-firo:latest
+    build: .
     container_name: electrumx
     restart: unless-stopped
     depends_on:
@@ -43,9 +43,8 @@ services:
       - DB_DIRECTORY=/db
       - DB_ENGINE=leveldb
       - SERVICES=tcp://:50001
-      - REPORT_SERVICES=ssl://${REPORT_HOST}:50002
       - PEER_DISCOVERY=on
-      - PEER_ANNOUNCE=yes
+      - PEER_ANNOUNCE=no
       - MAX_SEND=50000000
       - CACHE_MB=1500
       - ALLOW_ROOT=true

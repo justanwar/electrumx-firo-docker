@@ -26,7 +26,9 @@ python3 rpcauth.py firoelectrumx
 cp .env.example .env
 ```
 
-Fill in the values from the `rpcauth.py` output and set your `REPORT_HOST`.
+Fill in the values from the `rpcauth.py` output.
+
+By default the server runs privately (`PEER_ANNOUNCE=no`) and won't announce itself to the network. If you want your server publicly discoverable, set `REPORT_HOST` to your public domain/IP and set `PEER_ANNOUNCE=yes`.
 
 ### 3. Start
 
